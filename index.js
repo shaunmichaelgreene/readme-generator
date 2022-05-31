@@ -1,17 +1,18 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown')
+const generateMarkdown = require('./utils/generateMarkdown');
+const emailValidator = require('validator');
 
 // TODO: Create an array of questions for user input
 
 const questions = [
         {
             type: "input",
-            name: "name",
+            name: "title",
             message: "What is the name of your project? (Required)",
-            validate: (nameInput) => {
-                if (nameInput) {
+            validate: (title) => {
+                if (title) {
                     return true;
                 } else {
                     console.log("You need to enter a project name!");
@@ -23,8 +24,8 @@ const questions = [
             type: "input",
             name: "description",
             message: "Provide a description of the project (Required)",
-            validate: (descriptionInput) => {
-                if (descriptionInput) {
+            validate: (description) => {
+                if (description) {
                     return true;
                 } else {
                     console.log("You need to enter a project description!");
@@ -33,38 +34,25 @@ const questions = [
             },
         },
         {
-            type: "checkbox",
-            name: "languages",
-            message: "What did you this project with? (Check all that apply)",
-            choices: [
-                "JavaScript",
-                "HTML",
-                "CSS",
-                "ES6",
-                "jQuery",
-                "Bootstrap",
-                "Node",
-            ],
-        },
-        {
             type: "input",
-            name: "link",
-            message: "Enter the GitHub link to your project. (Required)",
-            validate: (linkInput) => {
-                if (linkInput) {
+            name: "githubLink",
+            message: "Enter the GitHub link to your project repository. (Required)",
+            validate: (githubLink) => {
+                if (githubLink) {
                     return true;
                 } else {
-                    console.log("You need to enter a project GitHub link!");
+                    console.log("You need to enter a GitHub project repository link!");
                     return false;
+                    //improve error handling here
                 }
             },
         },
         {
             type: "input",
-            name: "github",
+            name: "githubUser",
             message: "Enter your GitHub username. (Required)",
-            validate: (githubInput) => {
-                if (githubInput) {
+            validate: (githubUser) => {
+                if (githubUser) {
                     return true;
                 } else {
                     console.log("You need to enter your GitHub username!");
@@ -76,22 +64,22 @@ const questions = [
             type: "input",
             name: "email",
             message: "Enter your email address. (Required)",
-            validate: (emailInput) => {
-                if (emailInput) {
+            validate: (email) => {
+                if (emailValidator.isEmail(email)) {
                     return true;
                 } else {
-                    console.log("You need to enter your email address!");
+                    console.log(" Error - You need to enter a valid email address!");
                     return false;
                 }
-                //need better email validation here
+                //credit to validator.js
             },
         },
         {
             type: 'input',
             name: 'install',
             message: 'Enter instructions to install your project:',
-            validate: installInput => {
-                 if(installInput){
+            validate: install => {
+                 if(install){
                     return true;
                   } else {
                        console.log('Please enter instructions to install your project!');
@@ -120,9 +108,28 @@ const questions = [
             name: 'screenshot',
             message: 'Please enter the source/location for a screenshot of the application:',
         },
+        {
+            type: 'input',
+            name: 'url',
+            message: 'Please enter the live deployed URL for the application(if applicable):',
+        },
     ];
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+const writeToFile = (fileName, data) => {
+    return new Promise((resolve, reject) => {
+        //create readme and add to dist folder
+        fs.writeFile('./dist.README.md', (fileName, data), err => {
+        if (err) {
+            reject(err);
+            return;
+        }
+        resolve({
+            ok: true,
+            message: 'README created!'
+        });
+        })
+    })
+};
 
 // TODO: Create a function to initialize app
 const init = () => {
