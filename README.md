@@ -29,6 +29,7 @@
 
   ## Demo
   [Live Demo Video](https://drive.google.com/file/d/1Mctes7JrjVaxgfsg0VnkjMYtA338d5Mj/view)
+  
   [Link to the GitHub repository for the example project referenced in the demo video](https://github.com/shaunmichaelgreene/nature-finder)
 
   ## Questions
