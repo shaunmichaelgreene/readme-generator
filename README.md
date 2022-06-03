@@ -16,7 +16,7 @@
   * [License](#license)
 
   ## Installation
-  To install, simply clone the repository and invoke the application with the command prompt: “node index.js”. [Inquirer](https://www.npmjs.com/package/inquirer) and [Validator](https://www.npmjs.com/package/validator) are required, but are included as dependencies in the package.json file. 
+  To install, simply clone the repository and use command prompt "npm install". Invoke the application with the command prompt: “node index.js”. [Inquirer](https://www.npmjs.com/package/inquirer) and [Validator](https://www.npmjs.com/package/validator) are required, but are included as dependencies in the package.json file. 
 
   ## Usage
   Launch the app from the command line and follow the prompts to input your responses. Once all responses have been entered, the new README file will generate and appear in the root folder. 
