@@ -1,11 +1,11 @@
 
-  # Welcome to the README for Shaun’s README Generator  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
-    
-  [GitHub Repository](github.com/shaunmichaelgreene/readme-generator)
-  
+  # Welcome to the README for Nature-Finder  [![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+  [Live Deployed Link](https://shaunmichaelgreene.github.io/nature-finder/)  
+  [GitHub Repository](github.com/shaunmichaelgreene/nature-finder)
+  ![screenshot of Nature-Finder](https://i.imgur.com/KmpjY2S.jpeg)
 
   ## Description
-  This README Generator is an intuitive Node.js command line application that receives user input about a new project and generates a professional README file in Markdown format. 
+  Nature Finder is a single-page app that uses a blend of HTML, JS, custom CSS, bootstrap, and multiple APIs to locate and display data on nearby natural points of interest.
 
   ## Table of Contents
   * [Installation](#installation)
@@ -16,13 +16,13 @@
   * [License](#license)
 
   ## Installation
-  To install, simply clone the repository and invoke the application with the command prompt: “node index.js”. [Inquirer](https://www.npmjs.com/package/inquirer) and [Validator](https://www.npmjs.com/package/validator) are required, but are included as dependencies in the package.json file. 
+  No installation necessary - just visit the live deployed link on any updated web browser
 
   ## Usage
-  Launch the app from the command line and follow the prompts to input your responses. Once all responses have been entered, the new README file will generate and appear in the root folder. 
+  Simply enter the target zip code into the search form and hit submit, results are displayed on the same page.
 
   ## Contributing
-  Anything available for open-source contributions will be listed on the GitHub repository Issues page and marked accordingly.
+  Anything available for open-source contributions will be listed on the repository's issues page and marked accordingly.
 
   ## Tests
   No special testing instructions available at this time.
