@@ -119,7 +119,7 @@ const questions = [
         {
             type: 'input',
             name: 'screenshot',
-            message: 'Please enter the source/location for a screenshot of the application:',
+            message: 'If you would like to include a screenshot of the application, please enter the source URL or file path for the image:',
         },
         {
             type: 'input',

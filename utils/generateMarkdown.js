@@ -106,12 +106,30 @@ function renderLicenseSection(license) {
   }
 }
 
+function renderLiveLink(data) {
+  if (data.url == "") {
+    return ''
+  } else {
+    return `[Live Deployed Link](${data.url})`
+  }
+}
+
+function renderScreenshot(data) {
+  if (data.screenshot == "") {
+    return ''
+  } else {
+    return `![screenshot of ${data.title}](${data.screenshot})`
+  }
+}
+
+
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # Welcome to the README for ${data.title}  ${renderLicenseBadge(data.license)}
-  [Live Deployed Link](${data.url})  
-  ![screenshot of ${data.title}](${data.screenshot})
+  ${renderLiveLink(data)}  
+  [GitHub Repository](${data.githubLink})
+  ${renderScreenshot(data)}
 
   ## Description
   ${data.description}
@@ -139,13 +157,13 @@ function generateMarkdown(data) {
   ## Questions
   For additional support or inquiries, please feel free to reach out! 
 
-  GitHub: [${data.githubUser}](${data.githubLink})
+  GitHub: [${data.githubUser}](https://github.com/${data.githubUser})
   
   Email: ${data.email}
 
   ## License
   ### ${data.license}
-  Copyright &copy; 2022 ${data.githubUser}
+  Copyright &copy; 2022 [${data.githubUser}](https://github.com/${data.githubUser})
   ${renderLicenseSection(data.license)}
 `;
 }
