@@ -89,6 +89,19 @@ const questions = [
         },
         {
             type: 'input',
+            name: 'usage',
+            message: 'Please enter some information on how your project can be used:',
+            validate: usage => {
+                if(usage){
+                   return true;
+                 } else {
+                      console.log('Please enter some details about how your project can be used!');
+                   return false;
+               }
+            }
+        },
+        {
+            type: 'input',
             name: 'contribution',
             message: 'Please enter contribution instructions for anoyone looking to contribute to the project:',
         },
@@ -100,8 +113,8 @@ const questions = [
         {
             type: 'list',
             name: 'license',
-            message: 'Please choose a license',
-            choices: ['MIT', 'ISC', 'Apache-2.0', 'GPL-3.0', 'No License']
+            message: 'Please select a license',
+            choices: ['MIT', 'Apache-2.0', 'GPL-3.0', 'No License']
         },
         {
             type: 'input',
