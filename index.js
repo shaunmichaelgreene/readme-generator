@@ -1,10 +1,7 @@
-// TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
 const generateMarkdown = require('./utils/generateMarkdown');
 const emailValidator = require('validator');
-
-// TODO: Create an array of questions for user input
 
 const questions = [
         {
@@ -43,7 +40,6 @@ const questions = [
                 } else {
                     console.log("You need to enter a GitHub project repository link!");
                     return false;
-                    //improve error handling here
                 }
             },
         },
@@ -71,7 +67,6 @@ const questions = [
                     console.log(" Error - You need to enter a valid email address!");
                     return false;
                 }
-                //credit to validator.js
             },
         },
         {
@@ -127,7 +122,6 @@ const questions = [
             message: 'Please enter the live deployed URL for the application(if applicable):',
         },
     ];
-// TODO: Create a function to write README file
 const writeToFile = (fileName, data) => {
     return new Promise((resolve, reject) => {
         //create readme and add to dist folder
@@ -144,7 +138,6 @@ const writeToFile = (fileName, data) => {
     })
 };
 
-// TODO: Create a function to initialize app
 const init = () => {
     return inquirer.prompt(questions);
 }
